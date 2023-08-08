@@ -20,6 +20,7 @@
     
     var listItems = document.getElementsByClassName('list-group-item');
     console.log(listItems[2].innerHTML);
+    console.log(listItems)
     listItems[2].style.backgroundColor='green';
     for( var i=0;i<listItems.length;i++){
 
@@ -27,4 +28,12 @@
 
     }
     
+    var item5= document.getElementsByClassName('item5');
+console.log(item5)
+    item5[0].style.border= "solid 1px lightgray";
+    item5[0].style.padding = "12px 20px";
+    item5[0].style.fontWeight= "bold";
+    item5[0].style.listStyle = "none";
+
+
 
