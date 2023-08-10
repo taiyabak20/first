@@ -24,7 +24,7 @@
 //for( var i=0;i<listItems.length;i++){
 
 //listItems[i].style.fontWeight='bold';}
- 
+
 
 //var item5= document.getElementsByClassName('item5');
 //console.log(item5)
@@ -36,16 +36,10 @@
 // var item2 = document.querySelector('li:nth-child(2)');
 
 // item2.style.backgroundColor ='green';
-
 // var item3 = document.querySelector('li:nth-child(3)');
-
 // item3.style.color = 'transparent';
-
 // var allItems = document.querySelectorAll('li')
-
 //   allItems[1].style.color = 'green';
-
-
 // var oddItems = document.querySelectorAll('li:nth-child(odd)');
 
 // for(var i=0; i<oddItems.length;i++){
@@ -149,6 +143,7 @@ function addItem(e) {
 
   // Get input value
   var newItem = document.getElementById('item').value;
+  var newItemDescription = document.getElementById('itemDesc').value;
 
   // Create new li element
   var li = document.createElement('li');
@@ -177,6 +172,12 @@ function addItem(e) {
 
   // Append li to list
   itemList.appendChild(li);
+
+var itemDescDiv = document.createElement('div');
+itemDescDiv.className = 'item-description';
+itemDescDiv.appendChild(document.createTextNode(newItemDescription));
+li.appendChild(itemDescDiv);
+
 }
 
 // Remove item
@@ -197,11 +198,12 @@ function filterItems(e) {
   var items = itemList.getElementsByTagName('li');
   // Convert to an array
   Array.from(items).forEach(function(item) {
-    var itemName = item.firstChild.textContent;
-    if (itemName.toLowerCase().indexOf(text) != -1) {
+    var itemName = item.textContent;
+    
+    if (itemName.toLowerCase().indexOf(text) != -1 ) {
       item.style.display = 'block';
     } else {
       item.style.display = 'none';
     }
-  });
+  })
 }
